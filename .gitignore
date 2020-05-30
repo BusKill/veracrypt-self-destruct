@@ -1,0 +1,21 @@
+# Ignore Pycharm Settings
+.idea/
+
+# Ignore Python Virtual Enviroment
+venv/
+
+# Ignore MacOS stuff
+
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Unlikely to appear as not in root in volume, but good to have
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
