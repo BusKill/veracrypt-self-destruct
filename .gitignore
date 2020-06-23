@@ -1,17 +1,26 @@
 # Ignore Pycharm Settings
 .idea/
 
+# Ignore VSCode
+.vscode/
+
 # Ignore Python Virtual Enviroment
 venv/
 
 # Ignore MacOS stuff
-
-*.DS_Store
+### macOS ###
+# General
+.DS_Store
 .AppleDouble
 .LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
 ._*
 
-# Unlikely to appear as not in root in volume, but good to have
+# Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
@@ -19,3 +28,10 @@ venv/
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
