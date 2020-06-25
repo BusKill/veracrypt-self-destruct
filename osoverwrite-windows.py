@@ -15,7 +15,10 @@ import sys
 import os
 import secrets
 import ctypes
+import subprocess
 
+
+# Check if User is Admin
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -23,7 +26,9 @@ def is_admin():
         return False
 
 
+# If so, run rest of code. If not, request permissions.
 if is_admin():
-    # Put code here
+    # Run VeraCrypt Command to force dismount all volumes, wipes cached passwords, and quit without user prompts
+    subprocess.call('"C:\Program Files\VeraCrypt\VeraCrypt.exe" /d /f /w /q /s', shell=True)
 else:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
