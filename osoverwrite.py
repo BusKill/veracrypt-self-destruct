@@ -20,7 +20,10 @@ import platform
 
 # Check Platforms
 CURRENT_PLATFORM = platform.system().upper()
-#if CURRENT_PLATFORM.startswith( 'LINUX' ):
+if CURRENT_PLATFORM.startswith( 'LINUX' ):
+    if is_admin():
+        # Run VeraCrypt Command to force dismount all volumes
+        subprocess.call('veracrypt -d -f  ', shell=True)
 
 if CURRENT_PLATFORM.startswith( 'WIN' ):
     import ctypes
@@ -35,7 +38,10 @@ if CURRENT_PLATFORM.startswith( 'DARWIN' ):
     sys.exit()
 
 def is_admin():
-    try:
-        return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
-        return False
+    if CURRENT_PLATFORM.startswith( 'WIN' ):
+        try:
+            return ctypes.windll.shell32.IsUserAnAdmin()
+        except:
+            return False
+    # if CURRENT_PLATFORM.startswith( 'LINUX' ):
+        # TODO: Check if root on linux and re-run (need to test)
