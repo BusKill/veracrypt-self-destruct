@@ -5,9 +5,6 @@
 # WARNING: THIS IS EXPERIMENTAL SOFTWARE THAT IS DESIGNED TO CAUSE PERMANENT,
 #          COMPLETE AND IRREVERSIBLE DATA LOSS!
 # Authors: Jacob Neplokh <me at jacobneplokh dot com>
-# Created: 2020-06-01
-# Updated: 2020-06-01
-# Version: 0.1
 #############################################################################
 
 # Import modules
@@ -56,7 +53,7 @@ if CURRENT_PLATFORM.startswith( 'LINUX' ):
         # Run VeraCrypt Command to force dismount all volumes
         subprocess.call('veracrypt -d -f', shell=True)
         # TODO: See how VeraCrypt paths are on Linux
-        
+
 if CURRENT_PLATFORM.startswith( 'WIN' ):
     import ctypes
     if is_admin():
